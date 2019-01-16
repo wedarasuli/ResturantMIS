@@ -4,19 +4,22 @@
  @include('partials.head')
 
 <body class="fix-header fix-sidebar card-no-border">
-
+   <!--  <div style="height: 300px;width: 300px;background-color: red;">
+        
+    </div> -->
+<!-- 
    @if(isset(Auth::user()->email))
     <div class="alert alert-danger success-block">
      <Strong> welcome {{Auth::user()->email}}</strong>
      </br>
 
-     <a href="{{url('(/loign/logout')}}">Logout</a>
+     <a href="{{url('/login/')}}">Logout</a>
     </div>
     else
     <script>window.location="/login";</script>
     
 
-   @endif
+   @endif -->
    
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
@@ -24,7 +27,7 @@
     </div>
    
     <div id="main-wrapper">
-      
+
       @include('partials.header')
   
        @include('partials.asside')
@@ -32,6 +35,13 @@
         <div class="page-wrapper">
          
             <div class="container-fluid">
+
+                   @if(! isset(Auth::user()->email))
+                  
+                      <script>window.location="/login"</script>
+                    
+
+                   @endif
                 <!-- ============================================================== -->
                 <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->

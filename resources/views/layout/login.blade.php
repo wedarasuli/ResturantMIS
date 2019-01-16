@@ -6,7 +6,7 @@
  <div class="col-md-7">
 
   @if(isset(Auth::user()->email))
-  <script>window.location="/loign/suceessloign"</script>
+  <script>window.location="/login/successlogin"</script>
   @endif
 
   @if ($message=Session::get('error'))

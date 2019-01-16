@@ -11,15 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::redirect('/', '/login');
 
 // login
 Route::get('/login','LoginController@login');
 Route::post('/login/checklogin','LoginController@checklogin');
-Route::get('login/successlogin','LoginController@successlogin');
-Route::get('login/logout','LoginController@logout');
+Route::get('/login/successlogin','LoginController@successlogin');
+Route::get('/login/logout','LoginController@logout');
 // Route::get('/master', function(){
 //     return view('layout.master');
 // });

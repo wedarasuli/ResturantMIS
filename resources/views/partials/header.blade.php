@@ -43,9 +43,28 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user" class="profile-pic m-r-10" />Markarn Doe</a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user" class="profile-pic m-r-10" />Adew Kawa</a>
+
+                            <!-- <button class="btn btn-primary">logout</button> -->
+                            <a href="{{url('/login/logout')}}" class="btn btn-primary">Logout</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </header>
+         <!--  <div style="height: 300px;width: 300px;background-color: red;">
+        
+    </div> -->
+
+  <!--  @if(isset(Auth::user()->email))
+    <div class="alert alert-danger success-block">
+     <Strong> welcome {{Auth::user()->email}}</strong>
+     </br>
+
+     <a href="{{url('/login/')}}">Logout</a>
+    </div>
+    else
+    <script>window.location="/login";</script>
+    
+
+   @endif -->

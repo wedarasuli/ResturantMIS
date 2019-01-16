@@ -24,7 +24,7 @@ class LoginController extends Controller
       );
 
       if(Auth::attempt($user_data)){
-        return redirect('/login/master');
+        return redirect('/login/successlogin');
       }else{
         return back()->with('error','Wrong login details');
       }
@@ -35,7 +35,7 @@ class LoginController extends Controller
   }
    function logout(){
      Auth::logout();
-     return redirect('login');
+     return redirect('/login');
    }
 
 
