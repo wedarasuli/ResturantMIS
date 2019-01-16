@@ -3,39 +3,41 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Validator;
+use Auth;
 
 class LoginController extends Controller
 {
-    public function  signin(){
-        return view('layout.login');
-    }
+  function login(){
+      return view('layout.login');
+  }
+
+  function checklogin(Request $request){
+     $this->validate($request,[
+       'email' => 'required|email',
+       'password' => 'required|alphaNum|min:3'
+     ]);
+
+      $user_data=array(
+        'email' => $request->get('email'),
+        'password'=> $request->get('password'),
+      );
+
+      if(Auth::attempt($user_data)){
+        return redirect('/login/master');
+      }else{
+        return back()->with('error','Wrong login details');
+      }
+  }
+
+  function successlogin(){
+    return view('layout.master');
+  }
+   function logout(){
+     Auth::logout();
+     return redirect('login');
+   }
 
 
-   public function login(Request $request){
-    if($request->isMethod('post')){
-
-        $this->validate(
-            $request,[
-                'email'=>'required|email',
-                'password'=>'required',
-            ]
-        );
-
-
-        if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
-          
-       
-                return view('layout.master');
-            }
-           
-        }else
-     return \redirect()->back();
-       
-   
-
-    public function logout(){
-        Auth::logout();
-        return \redirect()->route('home');
-    }
 
 }
