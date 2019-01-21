@@ -11,8 +11,4 @@ class staff extends Model
         'name','father_name','address','age','salary','phone','photo',
      ];
 
-    public function attendance()
-    {
-    	return $this->belongsTo('App\attendance');
-    }
 }
