@@ -14,13 +14,17 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+<<<<<<< HEAD
+=======
+Route::redirect('/', '/login');
+>>>>>>> b09e64ee7638e3514cdb897764e656746ada7664
 
 // login
 Route::redirect('/', '/login');
 Route::get('/login','LoginController@login');
 Route::post('/login/checklogin','LoginController@checklogin');
-Route::get('login/successlogin','LoginController@successlogin');
-Route::get('login/logout','LoginController@logout');
+Route::get('/login/successlogin','LoginController@successlogin');
+Route::get('/login/logout','LoginController@logout');
 // Route::get('/master', function(){
 //     return view('layout.master');
 // });
