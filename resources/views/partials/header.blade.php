@@ -52,19 +52,3 @@
                 </div>
             </nav>
         </header>
-         <!--  <div style="height: 300px;width: 300px;background-color: red;">
-        
-    </div> -->
-
-  <!--  @if(isset(Auth::user()->email))
-    <div class="alert alert-danger success-block">
-     <Strong> welcome {{Auth::user()->email}}</strong>
-     </br>
-
-     <a href="{{url('/login/')}}">Logout</a>
-    </div>
-    else
-    <script>window.location="/login";</script>
-    
-
-   @endif -->
